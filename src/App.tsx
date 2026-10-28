@@ -2,8 +2,17 @@ import FirstScreen from "./components/FirstScreen";
 import ProjectList from "./components/ProjectList";
 import Request from "./components/Request";
 import Footer from "./components/Footer";
-// import FirstScrin from "./components/TaskList";
 
+// todo: разобратся с импортом
+// import FirstScrin from "./components/TaskList";
+// import Numbers from "./components/NumberList";
+
+type Number = {
+  id: string;
+  how_much: string;
+  what: string;
+  where: string;
+}
 type Project = {
   id: string;
   title: string;
@@ -13,6 +22,12 @@ type Project = {
 function App() {
   const label1: string = "РЕАЛИЗУЕМ КРУПНЕЙШИЕ ПРОЕКТЫ В МИРЕ";
   const label2: string = "стадионы, газопроводы, мосты, дамбы";
+  const defacultNumbers: Number[] = [
+    { id: "1", how_much: "26", what: "лет", where: "на рынке" },
+    { id: "2", how_much: "26", what: "лет", where: "на рынке" },
+    { id: "3", how_much: "26", what: "лет", where: "на рынке" },
+    { id: "4", how_much: "26", what: "лет", where: "на рынке" },
+  ]
   const defacultProjects: Project[] = [
     { id: "1", title: "Арена", body: "Мы сделали самую красивую арену в Европе. Это открытие стало для нас прорывной точкой для развития на следующие десятилетия. Мы очень рады данному еву." },
     { id: "2", title: "Арена", body: "Мы сделали самую красивую арену в Европе. Это открытие стало для нас прорывной точкой для развития на следующие десятилетия. Мы очень рады данному еву." },
@@ -27,10 +42,10 @@ function App() {
 
   return (
     <>
-      <FirstScreen label1={label1} label2={label2} />
+      <FirstScreen label1={label1} label2={label2} numberList={defacultNumbers} />
       <ProjectList label={label3} projetList={defacultProjects} />
       <Request label1={rqLabel1} label2={rqLabel2} label3={rqLabel3} />
-      <Footer label1={ftLabel1} label2={ftLabel2}/>
+      <Footer label1={ftLabel1} label2={ftLabel2} />
     </>
   )
 }

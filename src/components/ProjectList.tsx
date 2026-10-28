@@ -1,4 +1,5 @@
 import ProjectItem from "./ProjectItem";
+// import Project from "../App";
 
 type Project = {
     id: string;

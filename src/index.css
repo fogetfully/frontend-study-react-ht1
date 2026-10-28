@@ -1,10 +1,7 @@
-/* Подключаем шрифт Oswald и Open Sans как в оригинальном макете Figma */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@400;500;700&display=swap');
 
-/* 1. ПЕРЕМЕННЫЕ */
 :root {
   --white: #ffffff;
-  --light-bg: #f7f7f7;
   --dark: #404149;
   --gray: #999999;
   --accent: #F7654A;
@@ -40,7 +37,7 @@ img {
   flex-direction: column;
 }
 
-/* 3. ОБЩИЙ КОНТЕЙНЕР (центрует контент на странице) */
+/* ОБЩИЙ КОНТЕЙНЕР  */
 .container {
   max-width: 1110px;
   width: 100%;
@@ -48,7 +45,7 @@ img {
   padding: 0 15px;
 }
 
-/* 4. БАЗОВАЯ ТИПОГРАФИКА */
+/* БАЗОВАЯ ТИПОГРАФИКА */
 h1, h2, h3, h4 {
   font-family: var(--heading);
   font-weight: 500;
@@ -56,16 +53,16 @@ h1, h2, h3, h4 {
   color: var(--dark);
 }
 
-/* 5. ПЕРВЫЙ ЭКРАН (FirstScreen) */
+/* ПЕРВЫЙ ЭКРАН - FirstScreen */
 .first-screen {
-  /* Темный фильтр поверх картинкиbg.jpg, чтобы белый текст читался */
   background: linear-gradient(rgba(64, 65, 73, 0.8), rgba(64, 65, 73, 0.8)), 
               url('./assets/bg.jpg') center/cover no-repeat;
-  background-color: var(--dark); /* Запасной цвет, пока нет картинки */
+  background-color: var(--dark);
   color: var(--white);
   text-align: center;
   padding-top: 190px;
-  margin-bottom: 250px; /* Место под выпадающий вниз белый блок с цифрами */
+  padding-bottom: 0; 
+  margin-bottom: 150px; 
 }
 
 .first-screen > .container > h2 {
@@ -80,19 +77,18 @@ h1, h2, h3, h4 {
   color: var(--white);
   font-size: 18px;
   font-weight: 400;
-  margin-bottom: 20px;
+  /* Отступ от подзаголовка до белого блока с цифрами */
+  margin-bottom: 30px; 
 }
 
-/* 6. БЛОК С ЦИФРАМИ (NumberList и NumberItem) */
+/* БЛОК С ЦИФРАМИ - NumberList */
 .number-list {
-  background: var(--light-bg);
+  background: var(--white); 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   padding: 57px 130px;
-  /* Сдвигаем блок вниз, чтобы он наполовину лежал на сером фоне, а наполовину на белом */
-  transform: translateY(150px);
-  margin-top: -120px;
+  border: 0px;
 }
 
 .number-item {
@@ -150,7 +146,7 @@ h1, h2, h3, h4 {
 /* Оранжевая полоска над заголовком "Арена" */
 .project-item h4 {
   font-size: 24px;
-  text-transform: none; /* В макете написано "Арена", а не "АРЕНА" */
+  text-transform: none; 
   margin-bottom: 20px;
   position: relative;
   padding-top: 20px;
@@ -172,7 +168,7 @@ h1, h2, h3, h4 {
   line-height: 1.35;
 }
 
-/* 8. ОРАНЖЕВАЯ ПОЛОСА ЗАПРОСА (Request) */
+/*  Request */
 .request {
   background: var(--accent);
   color: var(--white);
@@ -221,7 +217,7 @@ h1, h2, h3, h4 {
   opacity: 0.9;
 }
 
-/* 9. ПОДВАЛ (Footer) */
+/* Footer */
 .footer {
   background: var(--dark);
   color: var(--white);
@@ -239,7 +235,7 @@ h1, h2, h3, h4 {
   color: var(--white);
 }
 
-/* 10. БАЗОВЫЙ АДАПТИВ ДЛЯ ПЛАНШЕТОВ И ТЕЛЕФОНОВ */
+/* БАЗОВЫЙ АДАПТИВ ДЛЯ ПЛАНШЕТОВ И ТЕЛЕФОНОВ */
 @media (max-width: 992px) {
   .number-list {
     grid-template-columns: repeat(2, 1fr);
